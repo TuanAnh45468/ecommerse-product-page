@@ -1,38 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="output.css">
-  <title>Frontend Mentor | E-commerce product page</title>
+    <link
+      href="images/favicon-32x32.png"
+      rel="icon"
+      sizes="32x32"
+      type="image/png"
+    />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="output.css" rel="stylesheet" />
+    <title>Frontend Mentor | E-commerce product page</title>
+  </head>
+  <body>
+    <header>
+      <img alt="" src="images/logo.svg" />
+      <nav>
+        <ul>
+          <li><a href="#">Collections</a></li>
+          <li><a href="#">Men</a></li>
+          <li><a href="#">Women</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <img alt="Shopping cart" src="images/icon-cart.svg" />
+      <img alt="User avatar" src="images/image-avatar.png" />
+    </header>
 
+    <main>
+      <section>
+        <figure>
+          <img alt="product image 1" src="images/image-product-1.jpg" />
+          <img
+            alt="product thumbnail 1"
+            src="images/image-product-1-thumbnail.jpg"
+          />
+          <img alt="product image 2" src="images/image-product-2.jpg" />
+          <img
+            alt="product thumbnail 2"
+            src="images/image-product-2-thumbnail.jpg"
+          />
+          <img alt="product image 3" src="images/image-product-3.jpg" />
+          <img
+            alt="product thumbnail 3"
+            src="images/image-product-3-thumbnail.jpg"
+          />
+          <img alt="product image 4" src="images/image-product-4.jpg" />
+          <img
+            alt="product thumbnail 4"
+            src="images/image-product-4-thumbnail.jpg"
+          />
+        </figure>
+      </section>
 
-</head>
-<body>
-  Collections
-  Men
-  Women
-  About
-  Contact
+      <section>
+        <span>Sneaker Company</span>
+        <h1 class="sr-only">Sneaker Company</h1>
+        <h1>Fall Limited Edition Sneakers</h1>
+        <p>
+          These low-profile sneakers are your perfect casual wear companion.
+          Featuring a durable rubber outer sole, they’ll withstand everything
+          the weather can offer.
+        </p>
 
-  Sneaker Company
+        <div>
+          <strong>$125.00</strong>
+          <span>50%</span>
+          <strike>$250.00</strike>
+        </div>
 
-  Fall Limited Edition Sneakers
-
-  These low-profile sneakers are your perfect casual wear companion. Featuring a 
-  durable rubber outer sole, they’ll withstand everything the weather can offer.
-
-  $125.00
-  50%
-  $250.00
-
-  0
-  Add to cart
-
-</body>
+        <div>
+          <div>
+            <button>
+              <img alt="decrease quantity" src="images/icon-minus.svg" />
+            </button>
+            0
+            <button><img alt="increase quantity" src="images/icon-plus.svg" />g</button>
+          </div>
+          <button>
+            <img alt="add to card" src="images/icon-cart.svg" />
+            Add to cart
+          </button>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
