@@ -22,9 +22,50 @@
   </head>
   <body class="flex min-h-screen flex-col items-center">
     <div
-      class="pointer-events-none fixed inset-0 bg-black opacity-0 transition-opacity duration-300"
+      class="pointer-events-none fixed inset-0 z-10 bg-black opacity-0 transition-opacity duration-300"
       id="overlay"
     ></div>
+
+    <div
+      class="fixed hidden pt-[92px] z-20 flex flex-col transform items-center rounded-lg bg-white w-[360px] h-[256px] translate-y-[31%]"
+      id="cart-card"
+    >
+      <span class="absolute font-bold top-[4px] left-[8px]">Cart</span>
+      <div class="flex flex-col gap-y-6 hidden" id="product-in-cart">
+        <div class="flex justify-between">
+          <img
+            alt=""
+            class="w-[50px] h-[50px] rounded-md"
+            src="images/image-product-1-thumbnail.jpg"
+          />
+          <div>
+            <p>Fall Limited Edition Sneaker</p>
+            <div>
+              <span class="text-dark-grayish-blue" id="quantity-price"
+                >$125.00 x 0</span
+              >
+              <span class="font-bold" id="total-price">$0.00</span>
+            </div>
+          </div>
+          <button id="delete-btn">
+            <img alt="remove product" src="images/icon-delete.svg" />
+          </button>
+        </div>
+
+        <button
+          class="rounded-lg font-bold text-white w-[312px] h-[56px] bg-orange"
+        >
+          Checkout
+        </button>
+      </div>
+      <p
+        class="hidden font-bold text-dark-grayish-blue"
+        id="empty-notification"
+      >
+        You cart is empty.
+      </p>
+    </div>
+
     <header
       class="mobile:mx-4 mobile:mt-5 mb-6 flex items-end mobile:w-[327px]"
     >
@@ -39,7 +80,7 @@
       <img alt="" class="w-[137.5px] h-[20px]" src="images/logo.svg" />
 
       <nav
-        class="fixed top-0 left-0 flex hidden mobile:h-screen flex-col bg-white mobile:pl-6 mobile:w-[250px]"
+        class="fixed top-0 left-0 mobile:z-10 flex hidden mobile:h-screen flex-col bg-white mobile:pl-6 mobile:w-[250px]"
         id="sidebar"
       >
         <img
@@ -56,11 +97,27 @@
           <li><a href="#">Contact</a></li>
         </ul>
       </nav>
-      <img
-        alt="Shopping cart"
-        class="mr-6 ml-auto w-[21.82px] h-[20px]"
-        src="images/icon-cart.svg"
-      />
+
+      <button
+        class="w-[21.82px] h-[20px] ml-auto mr-6 relative"
+        id="header-cart"
+      >
+        <svg
+          class="w-full h-full fill-very-dark-blue"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
+            fill-rule="nonzero"
+          />
+        </svg>
+        <span
+          class="w-[19px] hidden h-[13px] rounded-full flex items-center justify-center bg-orange text-[10px] font-bold text-white absolute top-[-6px] right-[-7px]"
+          id="quantity-badge"
+          >0</span
+        >
+      </button>
+
       <img
         alt="User avatar"
         class="w-[24px] h-[24px]"
@@ -72,7 +129,7 @@
       <section>
         <figure class="relative">
           <button
-            class="absolute top-1/2 left-[16px] flex flex-col items-center justify-center rounded-full bg-white w-[40px] h-[40px]"
+            class="absolute top-1/2 flex flex-col items-center justify-center rounded-full bg-white left-[16px] w-[40px] h-[40px]"
             id="previousBtn"
           >
             <img
@@ -82,7 +139,7 @@
             />
           </button>
           <button
-            class="absolute top-1/2 right-[16px] flex flex-col items-center justify-center rounded-full bg-white w-[40px] h-[40px]"
+            class="absolute top-1/2 flex flex-col items-center justify-center rounded-full bg-white right-[16px] w-[40px] h-[40px]"
             id="nextBtn"
           >
             <img
@@ -135,37 +192,57 @@
         </figure>
       </section>
 
-      <section>
-        <span>Sneaker Company</span>
+      <section class="mx-6 mt-6 flex flex-col gap-y-6 mb-[88px]">
+        <span
+          class="font-bold uppercase tracking-widest text-[12px] text-orange"
+          >Sneaker Company</span
+        >
         <h1 class="sr-only">Sneaker Company</h1>
-        <h1>Fall Limited Edition Sneakers</h1>
-        <p>
+        <h1 class="font-bold text-[28px]">Fall Limited Edition Sneakers</h1>
+        <p class="text-dark-grayish-blue">
           These low-profile sneakers are your perfect casual wear companion.
           Featuring a durable rubber outer sole, they’ll withstand everything
           the weather can offer.
         </p>
 
-        <div>
-          <strong>$125.00</strong>
-          <span>50%</span>
-          <strike>$250.00</strike>
+        <div class="flex items-end">
+          <strong class="font-bold text-[28px]">$125.00</strong>
+          <span
+            class="font-bold ml-[16px] bg-pale-orange px-[2px] py-[2px] text-orange"
+            >50%</span
+          >
+          <strike class="ml-auto font-bold text-dark-grayish-blue"
+            >$250.00</strike
+          >
         </div>
 
-        <div>
-          <div>
-            <button>
-              <img alt="decrease quantity" src="images/icon-minus.svg" />
-            </button>
-            0
-            <button>
-              <img alt="increase quantity" src="images/icon-plus.svg" />g
-            </button>
-          </div>
-          <button>
-            <img alt="add to card" src="images/icon-cart.svg" />
-            Add to cart
+        <div class="flex justify-between px-6">
+          <button id="decrease">
+            <img alt="decrease quantity" src="images/icon-minus.svg" />
+          </button>
+          <span class="font-bold" id="quantity"> 0 </span>
+          <button id="increase">
+            <img alt="increase quantity" src="images/icon-plus.svg" />
           </button>
         </div>
+
+        <button
+          class="flex w-full items-center justify-center rounded-lg h-[56px] bg-orange"
+          id="add-to-cart"
+        >
+          <svg
+            class="fill-white mr-[16px]"
+            height="20"
+            width="22"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
+              fill-rule="nonzero"
+            />
+          </svg>
+          <span class="font-bold text-white">Add to cart</span>
+        </button>
       </section>
     </main>
     <script src="main.js"></script>

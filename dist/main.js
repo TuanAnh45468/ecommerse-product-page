@@ -3,23 +3,90 @@ const closeIcon = document.getElementById("close");
 const sidebar = document.getElementById("sidebar");
 const overlay = document.getElementById("overlay");
 const nextBtn = document.getElementById("nextBtn");
-const previousBtn = document.getElementById("previousBtn");
+const headerCart = document.getElementById("header-cart");
+const cardCart = document.getElementById("cart-card");
+const increaseButton = document.getElementById("increase");
+const decreaseButton = document.getElementById("decrease");
+const quantitySpan = document.getElementById("quantity");
+const quantityBadge = document.getElementById("quantity-badge");
+const quantityPrice = document.getElementById("quantity-price");
+const totalPrice = document.getElementById("total-price");
+const productInCart = document.getElementById("product-in-cart");
+const emptyNotification = document.getElementById("empty-notification");
+const deleteBtn = document.getElementById("delete-btn");
+const addToCart = document.getElementById("add-to-cart");
 
+let quantity = 0;
 let previousIndex = -1;
 let currentIndex = 0;
 let nextIndex = 1;
+let isAddToCart = false;
 const SLIDES = document.getElementsByClassName("mySlides");
 const TOTAL_SLIDES = SLIDES.length;
 
 menuIcon.addEventListener("click", () => {
-  overlay.classList.remove("opacity-0", "pointer-event-none");
+  overlay.classList.remove("opacity-0");
   overlay.classList.add("opacity-75");
   sidebar.classList.remove("hidden");
+  nextBtn.classList.add("pointer-events-none");
 });
 
 closeIcon.addEventListener("click", () => {
   sidebar.classList.add("hidden");
-  overlay.classList.add("opacity-0", "pointer-event-none");
+  overlay.classList.remove("opacity-75");
+  overlay.classList.add("opacity-0", "pointer-events-none");
+  nextBtn.classList.remove("pointer-events-none");
+});
+
+headerCart.addEventListener("click", () => {
+  cardCart.classList.toggle("hidden");
+  if (!isAddToCart) emptyNotification.classList.remove("hidden");
+});
+
+function updateProductInCartVisibility() {
+  if (quantity > 0) {
+    productInCart.classList.remove("hidden");
+    emptyNotification.classList.add("hidden");
+  } else {
+    productInCart.classList.add("hidden");
+    emptyNotification.classList.remove("hidden");
+  }
+}
+
+deleteBtn.addEventListener("click", () => {
+  quantity = 0;
+  quantitySpan.innerText = "0";
+  quantityBadge.classList.add("hidden");
+  updateProductInCartVisibility();
+});
+
+increaseButton.addEventListener("click", () => {
+  quantity++;
+  quantitySpan.innerText = String(quantity);
+  quantityBadge.innerText = String(quantity);
+  quantityPrice.innerText = `$125.00 x ${quantity}`;
+  totalPrice.innerText = String(125 * quantity);
+});
+
+addToCart.addEventListener("click", () => {
+  isAddToCart = true;
+  if (quantity === 0) quantityBadge.classList.add("hidden");
+  quantityBadge.classList.remove("hidden");
+  productInCart.classList.remove("hidden");
+  emptyNotification.classList.add("hidden");
+  updateProductInCartVisibility();
+});
+
+decreaseButton.addEventListener("click", () => {
+  if (quantity > 0) quantity--;
+  quantityBadge.innerText = String(quantity);
+  quantityPrice.innerText = `$125.00 x ${quantity}`;
+  totalPrice.innerText = String(125 * quantity);
+  if (quantity === 0) {
+    productInCart.classList.add("hidden");
+    emptyNotification.classList.remove("hidden");
+  }
+  quantitySpan.innerText = String(quantity);
 });
 
 function updateSlideVisibility() {
