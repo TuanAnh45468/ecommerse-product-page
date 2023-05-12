@@ -20,11 +20,35 @@
     <link href="output.css" rel="stylesheet" />
     <title>Frontend Mentor | E-commerce product page</title>
   </head>
-  <body>
-    <header>
-      <img alt="" src="images/logo.svg" />
-      <nav>
-        <ul>
+  <body class="flex min-h-screen flex-col items-center">
+    <div
+      class="pointer-events-none fixed inset-0 bg-black opacity-0 transition-opacity duration-300"
+      id="overlay"
+    ></div>
+    <header
+      class="mobile:mx-4 mobile:mt-5 mb-6 flex items-end mobile:w-[327px]"
+    >
+      <button>
+        <img
+          alt="menu"
+          class="mr-4 w-[16px] h-[15px]"
+          id="menu"
+          src="images/icon-menu.svg"
+        />
+      </button>
+      <img alt="" class="w-[137.5px] h-[20px]" src="images/logo.svg" />
+
+      <nav
+        class="fixed top-0 left-0 flex hidden mobile:h-screen flex-col bg-white mobile:pl-6 mobile:w-[250px]"
+        id="sidebar"
+      >
+        <img
+          alt="close"
+          class="mt-6 w-[13.44px] h-[13.44px]"
+          id="close"
+          src="images/icon-close.svg"
+        />
+        <ul class="flex flex-col gap-y-5 text-xl font-bold pt-[92px]">
           <li><a href="#">Collections</a></li>
           <li><a href="#">Men</a></li>
           <li><a href="#">Women</a></li>
@@ -32,31 +56,80 @@
           <li><a href="#">Contact</a></li>
         </ul>
       </nav>
-      <img alt="Shopping cart" src="images/icon-cart.svg" />
-      <img alt="User avatar" src="images/image-avatar.png" />
+      <img
+        alt="Shopping cart"
+        class="mr-6 ml-auto w-[21.82px] h-[20px]"
+        src="images/icon-cart.svg"
+      />
+      <img
+        alt="User avatar"
+        class="w-[24px] h-[24px]"
+        src="images/image-avatar.png"
+      />
     </header>
 
     <main>
       <section>
-        <figure>
-          <img alt="product image 1" src="images/image-product-1.jpg" />
+        <figure class="relative">
+          <button
+            class="absolute top-1/2 left-[16px] flex flex-col items-center justify-center rounded-full bg-white w-[40px] h-[40px]"
+            id="previousBtn"
+          >
+            <img
+              alt="previous image"
+              class="w-[13px] h-[18px]"
+              src="images/icon-previous.svg"
+            />
+          </button>
+          <button
+            class="absolute top-1/2 right-[16px] flex flex-col items-center justify-center rounded-full bg-white w-[40px] h-[40px]"
+            id="nextBtn"
+          >
+            <img
+              alt="next image"
+              class="w-[13px] h-[18px]"
+              src="images/icon-next.svg"
+            />
+          </button>
+          <img
+            alt="product image 1"
+            class="hidden mySlides"
+            src="images/image-product-1.jpg"
+          />
           <img
             alt="product thumbnail 1"
+            class="max-laptop:hidden"
             src="images/image-product-1-thumbnail.jpg"
           />
-          <img alt="product image 2" src="images/image-product-2.jpg" />
+          <img
+            alt="product image 2"
+            class="hidden mySlides"
+            src="images/image-product-2.jpg"
+          />
           <img
             alt="product thumbnail 2"
+            class="max-laptop:hidden"
             src="images/image-product-2-thumbnail.jpg"
           />
-          <img alt="product image 3" src="images/image-product-3.jpg" />
+          <img
+            alt="product image 3"
+            class="hidden mySlides"
+            src="images/image-product-3.jpg"
+          />
+
           <img
             alt="product thumbnail 3"
+            class="max-laptop:hidden"
             src="images/image-product-3-thumbnail.jpg"
           />
-          <img alt="product image 4" src="images/image-product-4.jpg" />
+          <img
+            alt="product image 4"
+            class="hidden mySlides"
+            src="images/image-product-4.jpg"
+          />
           <img
             alt="product thumbnail 4"
+            class="max-laptop:hidden"
             src="images/image-product-4-thumbnail.jpg"
           />
         </figure>
@@ -84,7 +157,9 @@
               <img alt="decrease quantity" src="images/icon-minus.svg" />
             </button>
             0
-            <button><img alt="increase quantity" src="images/icon-plus.svg" />g</button>
+            <button>
+              <img alt="increase quantity" src="images/icon-plus.svg" />g
+            </button>
           </div>
           <button>
             <img alt="add to card" src="images/icon-cart.svg" />
@@ -93,5 +168,6 @@
         </div>
       </section>
     </main>
+    <script src="main.js"></script>
   </body>
 </html>

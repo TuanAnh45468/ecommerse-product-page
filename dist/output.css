@@ -539,3 +539,225 @@ body {
   white-space: nowrap;
   border-width: 0;
 }
+
+.pointer-events-none {
+  pointer-events: none;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+.inset-0 {
+  inset: 0px;
+}
+
+.left-0 {
+  left: 0px;
+}
+
+.left-\[16px\] {
+  left: 16px;
+}
+
+.right-\[16px\] {
+  right: 16px;
+}
+
+.top-0 {
+  top: 0px;
+}
+
+.top-1\/2 {
+  top: 50%;
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.mr-4 {
+  margin-right: 1rem;
+}
+
+.mr-6 {
+  margin-right: 1.5rem;
+}
+
+.mt-6 {
+  margin-top: 1.5rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.hidden {
+  display: none;
+}
+
+.h-\[13\.44px\] {
+  height: 13.44px;
+}
+
+.h-\[15px\] {
+  height: 15px;
+}
+
+.h-\[18px\] {
+  height: 18px;
+}
+
+.h-\[20px\] {
+  height: 20px;
+}
+
+.h-\[24px\] {
+  height: 24px;
+}
+
+.h-\[40px\] {
+  height: 40px;
+}
+
+.min-h-screen {
+  min-height: 100vh;
+}
+
+.w-\[13\.44px\] {
+  width: 13.44px;
+}
+
+.w-\[137\.5px\] {
+  width: 137.5px;
+}
+
+.w-\[13px\] {
+  width: 13px;
+}
+
+.w-\[16px\] {
+  width: 16px;
+}
+
+.w-\[21\.82px\] {
+  width: 21.82px;
+}
+
+.w-\[24px\] {
+  width: 24px;
+}
+
+.w-\[40px\] {
+  width: 40px;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.gap-y-5 {
+  row-gap: 1.25rem;
+}
+
+.rounded-full {
+  border-radius: 9999px;
+}
+
+.bg-black {
+  --tw-bg-opacity: 1;
+  background-color: hsl(0 0% 0% / var(--tw-bg-opacity));
+}
+
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: hsl(0 0% 100% / var(--tw-bg-opacity));
+}
+
+.pt-\[92px\] {
+  padding-top: 92px;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.opacity-0 {
+  opacity: 0;
+}
+
+.opacity-75 {
+  opacity: 0.75;
+}
+
+.transition-opacity {
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.duration-300 {
+  transition-duration: 300ms;
+}
+
+@media not all and (min-width: 1440px) {
+  .max-laptop\:hidden {
+    display: none;
+  }
+}
+
+@media (min-width: 375px) {
+  .mobile\:mx-4 {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .mobile\:mt-5 {
+    margin-top: 1.25rem;
+  }
+
+  .mobile\:h-screen {
+    height: 100vh;
+  }
+
+  .mobile\:w-\[250px\] {
+    width: 250px;
+  }
+
+  .mobile\:w-\[327px\] {
+    width: 327px;
+  }
+
+  .mobile\:pl-6 {
+    padding-left: 1.5rem;
+  }
+}
