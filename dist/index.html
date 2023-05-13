@@ -27,15 +27,15 @@
     ></div>
 
     <div
-      class="fixed hidden pt-[92px] z-20 flex flex-col transform items-center rounded-lg bg-white w-[360px] h-[256px] translate-y-[31%]"
+      class="fixed z-20 flex hidden drop-shadow-2xl transform flex-col items-center rounded-lg bg-white pt-[92px] w-[360px] h-[256px] translate-y-[31%] laptop:translate-y-[40%] laptop:translate-x-[110%]"
       id="cart-card"
     >
       <span class="absolute font-bold top-[4px] left-[8px]">Cart</span>
-      <div class="flex flex-col gap-y-6 hidden" id="product-in-cart">
+      <div class="flex hidden flex-col gap-y-6" id="product-in-cart">
         <div class="flex justify-between">
           <img
             alt=""
-            class="w-[50px] h-[50px] rounded-md"
+            class="rounded-md w-[50px] h-[50px]"
             src="images/image-product-1-thumbnail.jpg"
           />
           <div>
@@ -67,7 +67,7 @@
     </div>
 
     <header
-      class="mobile:mx-4 laptop:mx-[165px] mobile:mt-5 mb-6 flex laptop:justify-between items-end mobile:w-[327px] laptop:w-[1110px]"
+      class="mobile:mx-4 mobile:mt-5 mb-6 flex items-end laptop:justify-between laptop:mx-[165px] mobile:w-[327px] laptop:w-[1110px]"
     >
       <button class="laptop:hidden">
         <img
@@ -77,33 +77,39 @@
           src="images/icon-menu.svg"
         />
       </button>
-      <img alt="" class="w-[137.5px] h-[20px] laptop:mr-14" src="images/logo.svg" />
+      <img
+        alt=""
+        class="laptop:mr-14 w-[137.5px] h-[20px]"
+        src="images/logo.svg"
+      />
 
       <nav
-        class="fixed laptop:relative max-laptop:top-0 max-laptop:left-0 max-laptop:z-10 flex max-laptop:hidden max-laptop::h-screen flex-col bg-white mobile:pl-6 max-laptop:w-[250px]"
+        class="mobile:fixed laptop:relative max-laptop:top-0 max-laptop:left-0 max-laptop:z-10 flex max-laptop:hidden max-laptop:h-screen flex-col bg-white mobile:pl-6 max-laptop:w-[250px]"
         id="sidebar"
       >
         <img
           alt="close"
-          class="mt-6 w-[13.44px] h-[13.44px] laptop:hidden"
+          class="mt-6 laptop:hidden w-[13.44px] h-[13.44px]"
           id="close"
           src="images/icon-close.svg"
         />
-        <ul class="flex flex-col laptop:flex-row max-laptop:gap-y-5 laptop:gap-x-8 text-xl font-bold text-dark-grayish-blue laptop:font-regular max-laptop:pt-[92px]">
-          <li class="hover:text-orange"><a href="#">Collections</a></li>
-          <li class="hover:text-orange"><a href="#">Men</a></li>
-          <li class="hover:text-orange"><a href="#">Women</a></li>
-          <li class="hover:text-orange"><a href="#">About</a></li>
-          <li class="hover:text-orange"><a href="#">Contact</a></li>
+        <ul
+          class="flex laptop:flex-row flex-col laptop:gap-x-8 max-laptop:gap-y-5 text-xl font-bold laptop:text-dark-grayish-blue laptop:font-regular max-laptop:pt-[92px]"
+        >
+          <li class="mobile:hover:text-orange laptop:hover:text-black "><a href="#">Collections</a></li>
+          <li class="mobile:hover:text-orange laptop:hover:text-black"><a href="#">Men</a></li>
+          <li class="mobile:hover:text-orange laptop:hover:text-black"><a href="#">Women</a></li>
+          <li class="mobile:hover:text-orange laptop:hover:text-black"><a href="#">About</a></li>
+          <li class="mobile:hover:text-orange laptop:hover:text-black"><a href="#">Contact</a></li>
         </ul>
       </nav>
 
       <button
-        class="w-[21.82px] h-[20px] ml-auto mr-6 relative"
+        class="relative mr-6 ml-auto w-[21.82px] h-[20px]"
         id="header-cart"
       >
         <svg
-          class="w-full h-full fill-very-dark-blue"
+          class="h-full w-full fill-dark-grayish-blue hover:fill-very-dark-blue"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -112,7 +118,7 @@
           />
         </svg>
         <span
-          class="w-[19px] hidden h-[13px] rounded-full flex items-center justify-center bg-orange text-[10px] font-bold text-white absolute top-[-6px] right-[-7px]"
+          class="absolute flex hidden items-center justify-center rounded-full font-bold text-white w-[19px] h-[13px] bg-orange text-[10px] top-[-6px] right-[-7px]"
           id="quantity-badge"
           >0</span
         >
@@ -120,14 +126,14 @@
 
       <img
         alt="User avatar"
-        class="w-[24px] h-[24px] laptop:w-[50px] laptop:h-[50px]"
+        class="w-[24px] h-[24px] laptop:w-[50px] laptop:h-[50px] hover:border-orange hover:border-2 hover:rounded-full"
         src="images/image-avatar.png"
       />
     </header>
 
-    <main>
-      <section>
-        <figure class="relative">
+    <main class="laptop:mx-52 laptop:mt-32 laptop:flex laptop:mb-[132px]">
+      <section class="laptop:flex laptop:flex-col laptop:gap-y-8">
+        <figure class="relative laptop:w-[445px]">
           <button
             class="absolute top-1/2 flex flex-col items-center justify-center rounded-full bg-white left-[16px] w-[40px] h-[40px]"
             id="previousBtn"
@@ -150,99 +156,136 @@
           </button>
           <img
             alt="product image 1"
-            class="hidden mySlides"
+            class="hidden laptop:rounded-lg mySlides"
+            id="image1"
             src="images/image-product-1.jpg"
           />
-          <img
-            alt="product thumbnail 1"
-            class="max-laptop:hidden"
-            src="images/image-product-1-thumbnail.jpg"
-          />
+
           <img
             alt="product image 2"
-            class="hidden mySlides"
+            class="hidden laptop:rounded-lg mySlides"
+            id="image2"
             src="images/image-product-2.jpg"
           />
-          <img
-            alt="product thumbnail 2"
-            class="max-laptop:hidden"
-            src="images/image-product-2-thumbnail.jpg"
-          />
+
           <img
             alt="product image 3"
-            class="hidden mySlides"
+            class="hidden laptop:rounded-lg mySlides"
+            id="image3"
             src="images/image-product-3.jpg"
           />
 
           <img
-            alt="product thumbnail 3"
-            class="max-laptop:hidden"
-            src="images/image-product-3-thumbnail.jpg"
-          />
-          <img
             alt="product image 4"
-            class="hidden mySlides"
+            class="hidden laptop:rounded-lg mySlides"
+            id="image4"
             src="images/image-product-4.jpg"
           />
-          <img
-            alt="product thumbnail 4"
-            class="max-laptop:hidden"
-            src="images/image-product-4-thumbnail.jpg"
-          />
+        </figure>
+
+        <figure class="flex max-laptop:hidden gap-x-8 laptop:w-[445px]">
+          <div class="w-[88px] h-[88px] relative thumbnail-image">
+            <img
+              alt="product thumbnail 1"
+              class="rounded-lg hover:thumbnail-hover-overlay"
+              data-img="image1"
+              src="images/image-product-1-thumbnail.jpg"
+            />
+          </div>
+
+          <div class="w-[88px] h-[88px] relative thumbnail-image">
+            <img
+              alt="product thumbnail 2"
+              class="rounded-lg hover:thumbnail-hover-overlay"
+              data-img="image2"
+              src="images/image-product-2-thumbnail.jpg"
+            />
+          </div>
+
+          <div class="w-[88px] h-[88px] relative thumbnail-image">
+            <img
+              alt="product thumbnail 3"
+              class="rounded-lg hover:thumbnail-hover-overlay"
+              data-img="image3"
+              src="images/image-product-3-thumbnail.jpg"
+            />
+          </div>
+
+          <div class="w-[88px] h-[88px] relative thumbnail-image">
+            <img
+              alt="product thumbnail 4"
+              class="rounded-lg hover:thumbnail-hover-overlay"
+              data-img="image4"
+              src="images/image-product-4-thumbnail.jpg"
+            />
+          </div>
         </figure>
       </section>
 
-      <section class="mx-6 mt-6 flex flex-col gap-y-6 mb-[88px]">
+      <section
+        class="mx-6 mt-6 laptop:mt-12 laptop:ml-32 flex flex-col gap-y-6 mb-[88px]"
+      >
         <span
-          class="font-bold uppercase tracking-widest text-[12px] text-orange"
+          class="font-bold uppercase tracking-widest text-[12px] laptop:text-[13px] text-orange"
           >Sneaker Company</span
         >
         <h1 class="sr-only">Sneaker Company</h1>
-        <h1 class="font-bold text-[28px]">Fall Limited Edition Sneakers</h1>
+        <h1
+          class="font-bold text-[28px] laptop:text-[44px] laptop:leading-[44px]"
+        >
+          Fall Limited Edition Sneakers
+        </h1>
         <p class="text-dark-grayish-blue">
           These low-profile sneakers are your perfect casual wear companion.
           Featuring a durable rubber outer sole, they’ll withstand everything
           the weather can offer.
         </p>
 
-        <div class="flex items-end">
-          <strong class="font-bold text-[28px]">$125.00</strong>
-          <span
-            class="font-bold ml-[16px] bg-pale-orange px-[2px] py-[2px] text-orange"
-            >50%</span
-          >
-          <strike class="ml-auto font-bold text-dark-grayish-blue"
+        <div
+          class="flex items-end laptop:flex-col laptop:items-start laptop:gap-y-2.5"
+        >
+          <div>
+            <strong class="font-bold text-[28px]">$125.00</strong>
+            <span
+              class="font-bold ml-[16px] bg-pale-orange px-[2px] py-[2px] text-orange"
+              >50%</span
+            >
+          </div>
+
+          <strike class="ml-auto laptop:ml-0 font-bold text-grayish-blue"
             >$250.00</strike
           >
         </div>
 
-        <div class="flex justify-between px-6">
-          <button id="decrease">
-            <img alt="decrease quantity" src="images/icon-minus.svg" />
-          </button>
-          <span class="font-bold" id="quantity"> 0 </span>
-          <button id="increase">
-            <img alt="increase quantity" src="images/icon-plus.svg" />
+        <div class="laptop:flex laptop:items-center">
+          <div class="flex justify-between px-6 laptop:w-[157px]">
+            <button id="decrease">
+              <svg aria-label="decrease" class="fill-orange hover:fill-light-orange" height="4" width="12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path d="M11.357 3.332A.641.641 0 0 0 12 2.69V.643A.641.641 0 0 0 11.357 0H.643A.641.641 0 0 0 0 .643v2.046c0 .357.287.643.643.643h10.714Z" id="a"/></defs><use fill-rule="nonzero" xlink:href="#a"/></svg>
+            </button>
+            <span class="font-bold" id="quantity"> 0 </span>
+            <button id="increase">
+              <svg aria-label="increase" class="fill-orange hover:fill-light-orange" height="12" width="12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path d="M12 7.023V4.977a.641.641 0 0 0-.643-.643h-3.69V.643A.641.641 0 0 0 7.022 0H4.977a.641.641 0 0 0-.643.643v3.69H.643A.641.641 0 0 0 0 4.978v2.046c0 .356.287.643.643.643h3.69v3.691c0 .356.288.643.644.643h2.046a.641.641 0 0 0 .643-.643v-3.69h3.691A.641.641 0 0 0 12 7.022Z" id="b"/></defs><use fill-rule="nonzero" xlink:href="#b"/></svg>
+            </button>
+          </div>
+
+          <button
+            class="flex hover:bg-light-orange w-full items-center justify-center mt-6 laptop:mt-0 rounded-lg drop-shadow-2xl h-[56px] laptop:w-[272px] bg-orange"
+            id="add-to-cart"
+          >
+            <svg
+              class="fill-white mr-[16px]"
+              height="20"
+              width="22"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
+                fill-rule="nonzero"
+              />
+            </svg>
+            <span class="font-bold text-white">Add to cart</span>
           </button>
         </div>
-
-        <button
-          class="flex w-full drop-shadow-2xl items-center justify-center rounded-lg h-[56px] bg-orange"
-          id="add-to-cart"
-        >
-          <svg
-            class="fill-white mr-[16px]"
-            height="20"
-            width="22"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
-              fill-rule="nonzero"
-            />
-          </svg>
-          <span class="font-bold text-white">Add to cart</span>
-        </button>
       </section>
     </main>
     <script src="main.js"></script>

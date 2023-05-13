@@ -6,4 +6,34 @@
     body{
         @apply font-kumbh-sans text-base
     }
+
+    li a{
+        position: relative;
+        display: inline-block;
+    }
+
+    li a::after{
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: hsl(26, 100%, 55%);
+        transition: width 0.3s ease;
+    }
+
+    li a:hover::after{
+        width: 100%;
+    }
+}
+
+@layer components {
+    .thumbnail-overlay{
+        @apply w-full h-full rounded-lg bg-light-grayish-blue absolute top-0 opacity-30
+    }
+
+    .thumbnail-hover-overlay{
+        @apply w-full h-full rounded-lg bg-light-grayish-blue absolute top-0 opacity-75
+    }
 }

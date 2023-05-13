@@ -15,6 +15,8 @@ const productInCart = document.getElementById("product-in-cart");
 const emptyNotification = document.getElementById("empty-notification");
 const deleteBtn = document.getElementById("delete-btn");
 const addToCart = document.getElementById("add-to-cart");
+const thumbnailImages = document.querySelectorAll(".thumbnail-image img");
+const thumbnailDivs = document.querySelectorAll(".thumbnail-image");
 
 let quantity = 0;
 let previousIndex = -1;
@@ -24,18 +26,40 @@ let isAddToCart = false;
 const SLIDES = document.getElementsByClassName("mySlides");
 const TOTAL_SLIDES = SLIDES.length;
 
+thumbnailImages.forEach((thumbnail) => {
+  thumbnail.addEventListener("click", function () {
+    thumbnailImages.forEach((thumbnail) => {
+      thumbnail.classList.remove("thumbnail-overlay");
+    });
+    this.classList.add("thumbnail-overlay");
+
+    const images = document.querySelectorAll(".mySlides");
+    images.forEach((image) => {
+      image.classList.add("hidden");
+    });
+
+    const targetImageId = this.getAttribute("data-img");
+    const targetImage = document.getElementById(targetImageId);
+    targetImage.classList.remove("hidden");
+  });
+});
+
 menuIcon.addEventListener("click", () => {
   overlay.classList.remove("opacity-0");
   overlay.classList.add("opacity-75");
-  sidebar.classList.remove("hidden");
+  sidebar.classList.remove("max-laptop:hidden");
   nextBtn.classList.add("pointer-events-none");
+  headerCart.classList.add("pointer-events-none");
+  addToCart.classList.add("pointer-events-none");
 });
 
 closeIcon.addEventListener("click", () => {
-  sidebar.classList.add("hidden");
+  sidebar.classList.add("max-laptop:hidden");
   overlay.classList.remove("opacity-75");
   overlay.classList.add("opacity-0", "pointer-events-none");
   nextBtn.classList.remove("pointer-events-none");
+  headerCart.classList.remove("pointer-events-none");
+  addToCart.classList.remove("pointer-events-none");
 });
 
 headerCart.addEventListener("click", () => {
