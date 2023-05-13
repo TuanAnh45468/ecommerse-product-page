@@ -16,7 +16,6 @@ const emptyNotification = document.getElementById("empty-notification");
 const deleteBtn = document.getElementById("delete-btn");
 const addToCart = document.getElementById("add-to-cart");
 const thumbnailImages = document.querySelectorAll(".thumbnail-image img");
-const thumbnailDivs = document.querySelectorAll(".thumbnail-image");
 
 let quantity = 0;
 let previousIndex = -1;
